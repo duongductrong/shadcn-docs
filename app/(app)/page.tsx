@@ -2,14 +2,13 @@ import { Metadata } from "next"
 import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
-import { CardsDemo } from "@/components/cards-demo"
-import { ExamplesNav } from "@/components/examples-nav"
 import {
   PageActions,
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header"
+import { Powerful } from "@/components/powerful"
 import { Button } from "@/components/ui/button"
 
 const title = "Build your own documentation site"
@@ -56,25 +55,10 @@ export default function IndexPage() {
           </Button>
         </PageActions>
       </PageHeader>
-      <div className="border-grid border-b">
-        <div className="container-wrapper">
-          <div className="container py-4">
-            <ExamplesNav className="[&>a:first-child]:text-primary" />
-          </div>
-        </div>
-      </div>
-      <div className="container-wrapper">
+
+      <div className="container-wrapper h-[75vh]">
         <div className="container py-6">
-          <section
-            className="hidden md:block [&>div]:p-0"
-            style={
-              {
-                "--radius": "0.75rem",
-              } as React.CSSProperties
-            }
-          >
-            <CardsDemo />
-          </section>
+          <Powerful />
         </div>
       </div>
     </>
