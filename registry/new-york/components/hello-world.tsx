@@ -11,4 +11,6 @@ const HelloWorld = (props: Props) => {
   )
 }
 
-export default HelloWorld
+HelloWorld.displayName = "HelloWorld"
+
+export { HelloWorld }

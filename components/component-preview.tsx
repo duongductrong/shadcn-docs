@@ -1,5 +1,6 @@
 "use client"
 
+import { Index } from "@/__registry__"
 import Image from "next/image"
 import * as React from "react"
 
@@ -7,9 +8,9 @@ import { CopyButton } from "@/components/copy-button"
 import { Icons } from "@/components/icons"
 import { StyleSwitcher } from "@/components/style-switcher"
 import { ThemeWrapper } from "@/components/theme-wrapper"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useConfig } from "@/hooks/use-config"
 import { cn } from "@/lib/utils"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { styles } from "@/registry/registry-styles"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -45,7 +46,7 @@ export function ComponentPreview({
   const Code = Codes[index]
 
   const Preview = React.useMemo(() => {
-    const Component = component || React.lazy(() => import(name!))
+    const Component = Index[config.style][name!].component
 
     if (!Component) {
       return (
