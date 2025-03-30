@@ -14,14 +14,13 @@ import { cn } from "@/lib/utils"
 import { styles } from "@/registry/registry-styles"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
-  name?: string
+  name: string
   extractClassname?: boolean
   extractedClassNames?: string
   align?: "center" | "start" | "end"
   description?: string
   hideCode?: boolean
   type?: "block" | "component" | "example"
-  component?: React.ComponentType<any>
 }
 
 export function ComponentPreview({
@@ -34,11 +33,8 @@ export function ComponentPreview({
   align = "center",
   description,
   hideCode = false,
-  component,
   ...props
 }: ComponentPreviewProps) {
-  if (!name && !component) throw new Error("Either name or component must be provided")
-
   const [config] = useConfig()
   const index = styles.findIndex((style) => style.name === config.style)
 
