@@ -5,7 +5,8 @@ import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
 import { styles } from "../registry/registry-styles"
 
-export const componentRegistry = (style: string, name: string) => `registry/${style}/ui/${name}.tsx`
+export const componentRegistry = (style: string, name: string) =>
+  `registry/${style}/examples/${name}.tsx`
 
 export function rehypeComponent() {
   return async (tree: UnistTree) => {

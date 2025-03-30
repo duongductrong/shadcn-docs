@@ -1,10 +1,9 @@
-import React from "react"
 import { Button } from "@/components/ui/button"
 
-type Props = {}
+export interface HelloWorldProps {}
 
-const HelloWorld = (props: Props) => {
-  return <Button>Hello World Component</Button>
+const HelloWorld = (props: HelloWorldProps) => {
+  return <Button>Hello World</Button>
 }
 
 HelloWorld.displayName = "HelloWorld"

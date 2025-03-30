@@ -1,9 +1,7 @@
-import React from "react"
+import { HelloWorld } from "@/registry/new-york/ui/hello-world"
 
-export interface HelloWorldPreviewProps {}
+export interface HelloWorldProps {}
 
-const HelloWorldPreview = (props: HelloWorldPreviewProps) => {
-  return <div>Hello World Preview Mode</div>
+export default function HelloWorldDemo(props: HelloWorldProps) {
+  return <HelloWorld />
 }
-
-export default HelloWorldPreview
