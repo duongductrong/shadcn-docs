@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/button"
 type Props = {}
 
 const HelloWorld = (props: Props) => {
-  return (
-    <div>
-      <Button>Hello World</Button>
-    </div>
-  )
+  return <Button>Hello World</Button>
 }
 
 HelloWorld.displayName = "HelloWorld"

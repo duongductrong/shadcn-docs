@@ -1,6 +1,5 @@
 "use client"
 
-import { Index } from "@/__registry__"
 import Image from "next/image"
 import * as React from "react"
 
@@ -42,7 +41,7 @@ export function ComponentPreview({
   const Code = Codes[index]
 
   const Preview = React.useMemo(() => {
-    const Component = Index[config.style][name!].component
+    const Component = React.lazy(() => import(`@/registry/${config.style}/examples/${name}`))
 
     if (!Component) {
       return (
