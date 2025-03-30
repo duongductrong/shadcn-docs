@@ -9,12 +9,6 @@ interface PowerfulProps extends React.HTMLAttributes<HTMLDivElement> {}
 export function Powerful({ className, ...props }: PowerfulProps) {
   return (
     <div {...props} className={cn("grid grid-cols-12 gap-4", className)}>
-      <h2 className="col-span-12 text-4xl md:text-5xl font-bold">Powerful.</h2>
-      <p className="col-span-12 text-sm md:text-base text-muted-foreground mb-4">
-        We believe in the power of open source and the ability to build powerful tools that help you
-        build your own documentation site.
-      </p>
-
       <PowerfulCard
         title="Open source"
         description="Free and open source, built with modern technologies. Available on GitHub for anyone to use, modify, and contribute to the project."
