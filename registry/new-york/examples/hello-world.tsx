@@ -1,9 +1,9 @@
 import React from "react"
 
-export interface HelloWorldPReviewProps {}
+export interface HelloWorldPreviewProps {}
 
-const HelloWorldPReview = (props: HelloWorldPReviewProps) => {
-  return <div>Hello World Preview</div>
+const HelloWorldPreview = (props: HelloWorldPreviewProps) => {
+  return <div>Hello World Preview Mode</div>
 }
 
-export default HelloWorldPReview
+export default HelloWorldPreview

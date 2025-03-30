@@ -14,6 +14,7 @@ export const Index: Record<string, any> = {
         type: "registry:ui",
         target: ""
       }],
+      component: "new-york/examples/hello-world",
       categories: undefined,
       source: "",
       meta: undefined,

@@ -3,8 +3,9 @@ import path from "path"
 import { UnistNode, UnistTree } from "types/unist"
 import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
-import { Index } from "../__registry__"
 import { styles } from "../registry/registry-styles"
+
+export const componentRegistry = (style: string, name: string) => `registry/${style}/ui/${name}.tsx`
 
 export function rehypeComponent() {
   return async (tree: UnistTree) => {
@@ -32,15 +33,7 @@ export function rehypeComponent() {
             if (srcPath) {
               src = path.join(process.cwd(), srcPath)
             } else {
-              const component = Index[style.name][name]
-              src = fileName
-                ? component.files.find((file: unknown) => {
-                    if (typeof file === "string") {
-                      return file.endsWith(`${fileName}.tsx`) || file.endsWith(`${fileName}.ts`)
-                    }
-                    return false
-                  }) || component.files[0]?.path
-                : component.files[0]?.path
+              src = componentRegistry(style.name, name)
             }
 
             // Read the source file.
@@ -99,8 +92,7 @@ export function rehypeComponent() {
 
         try {
           for (const style of styles) {
-            const component = Index[style.name][name]
-            const src = component.files[0]?.path
+            const src = componentRegistry(style.name, name)
 
             // Read the source file.
             const filePath = src

@@ -41,7 +41,7 @@ export function ComponentPreview({
   const Code = Codes[index]
 
   const Preview = React.useMemo(() => {
-    const Component = React.lazy(() => import(`@/registry/${config.style}/examples/${name}`))
+    const Component = React.lazy(() => import(`@/registry/${config.style}/examples/${name}.tsx`))
 
     if (!Component) {
       return (
